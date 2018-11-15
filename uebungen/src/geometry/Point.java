@@ -11,8 +11,8 @@ public Point() {
 }
 
 public Point(double x, double y) {
-	this.x=0;
-	this.y=0;
+	this.x=x;
+	this.y=y;
 }
 
 public Point(Point otherPoint) {

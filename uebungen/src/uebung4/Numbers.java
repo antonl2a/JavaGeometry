@@ -2,7 +2,7 @@ package uebung4;
 import java.util.Scanner;
 public class Numbers {
 	public static void main(String[] args) {
-		Scanner scan=new Scanner(System.in)
+		Scanner scan=new Scanner(System.in);
 	System.out.println("1234 palindromisch: "+ isPalindrome(1234));
 	System.out.println("1221 palindromisch: "+ isPalindrome(1221));
 	System.out.println("1234 umgekehrt: "+reverse(1234));
