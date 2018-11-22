@@ -24,9 +24,7 @@ public class Triangle {
 		sides[2] = otherTriangle.sides[2];
 	}
 	private void calculateSides() {
-		sides[0] = Help.calculateDistance(points[0], points[1]);
-		sides[1] = Help.calculateDistance(points[1], points[2]);
-		sides[2] = Help.calculateDistance(points[2], points[0]);
+		
 	}
 	public boolean isValid() {
 		return !Help.areCollinear(points[0], points[1], points[2]);

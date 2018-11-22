@@ -2,7 +2,7 @@ package uebung3;
 import java.util.Scanner;
 public class DreieckBerechnung {
 	public static void main(String[] args) {
-		Scanner input= new Scanner(System.in);
+		Scanner  input = new Scanner(System.in);
 		double a=input.nextDouble();
 		double b=input.nextDouble();
 		double c=input.nextDouble();
