@@ -1,5 +1,5 @@
 package geometry;
-
+import javafx.scene.shape.Shape;
 public class Rectangle extends GeometricObject {
 	//private Point startPoint;
 	private double height;
@@ -76,6 +76,15 @@ public class Rectangle extends GeometricObject {
 		}
 		else {
 			return false;
-		}
+		}	
 	}
+	@Override
+	public Shape createShape(int scale) {
+		double scaledX=points[0].x*scale;
+		double scaledY = points[0].y*scale;
+		double scaledHeight = height*scale;
+		double scaledWidth = width*scale;
+		return new javafx.scene.shape.Rectangle(scaledX,scaledY,scaledWidth,scaledHeight);
+	}
+
 }

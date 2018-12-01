@@ -1,5 +1,9 @@
 package geometry;
 
+import java.awt.Polygon;
+
+import javafx.scene.shape.Shape;
+
 public class Triangle extends GeometricObject{
 	/*private Point[] points = new Point[3];
 	private double[] sides = new double[3];
@@ -106,5 +110,18 @@ public class Triangle extends GeometricObject{
 		}
 		
 	}
+	@Override
+	public Shape createShape(int scale) {
+		double[] coordinates = {
+				points[0].x, points[0].y,
+				points[1].x, points[1].y,
+				points[2].x, points[2].y
+		};
+		for (int i = 0; i < coordinates.length; i++) {
+			coordinates[i]*=scale;
+		}
+		return new javafx.scene.shape.Polygon(coordinates);
+	}
+	
 	
 }

@@ -1,5 +1,7 @@
 package geometry;
 
+import javafx.scene.shape.Shape;
+
 public class Eclipse extends GeometricObject{
 	//private Point startPoint;
 	private double a;
@@ -77,5 +79,13 @@ public class Eclipse extends GeometricObject{
 		else {
 			return false;
 		}
+	}
+	@Override
+	public Shape createShape(int scale) {
+		double scaledCenterX = (points[0].x +a) * scale;
+		double scaledCenterY = (points[0].y + b) * scale;
+		double scaledA = a * scale;
+		double scaledB = b * scale;
+		return new javafx.scene.shape.Ellipse(scaledCenterX, scaledCenterY, scaledA, scaledB);
 	}
 }

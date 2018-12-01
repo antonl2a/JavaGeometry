@@ -1,6 +1,6 @@
 package geometry;
 
-public abstract class GeometricObject {
+public abstract class GeometricObject implements GeometricDrawing{
 	protected String name;
 	protected Point[] points;
 	protected double[] sides;
