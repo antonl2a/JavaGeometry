@@ -87,4 +87,14 @@ public class Rectangle extends GeometricObject {
 		return new javafx.scene.shape.Rectangle(scaledX,scaledY,scaledWidth,scaledHeight);
 	}
 
+	@Override
+	public boolean contains(double x, double y) {
+		
+		if (x > points[0].x && x < (points[0].x + width) && y > points[0].y && y < (points[0].y + height)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

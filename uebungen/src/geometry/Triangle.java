@@ -122,6 +122,19 @@ public class Triangle extends GeometricObject{
 		}
 		return new javafx.scene.shape.Polygon(coordinates);
 	}
+	@Override
+	public boolean contains(double x, double y) {
+		Point clickPoint = new Point(x, y);
+		Triangle triangle1 = new Triangle(points[0], points[1], clickPoint);
+		Triangle triangle2 = new Triangle(points[1], points[2], clickPoint);
+		Triangle triangle3 = new Triangle(points[2], points[0], clickPoint);
+		double areaSum = triangle1.calculateArea() + triangle2.calculateArea() + triangle3.calculateArea();
+		if (areaSum == calculateArea()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 	
 }

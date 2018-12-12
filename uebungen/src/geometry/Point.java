@@ -13,11 +13,12 @@ public Point() {
 public Point(double x, double y) {
 	this.x=x;
 	this.y=y;
+	//System.out.println(this);
 }
 
 public Point(Point otherPoint) {
-	x=otherPoint.x;
-	y=otherPoint.y;
+	this.x=otherPoint.x;
+	this.y=otherPoint.y;
 }
 public void initialize() {
 	System.out.println("Eingabe x: ");
@@ -42,6 +43,8 @@ public boolean equal(Point otherPoint) {
 	
 	return xEqual&&yEqual;
 }
+
+@Override
 public String toString() {
 	return "("+x+","+y+")";
 }

@@ -1,7 +1,5 @@
 package geometry;
-
-import java.awt.Polygon;
-import java.awt.Shape;
+import javafx.scene.shape.*;
 
 public class Quadrangle extends GeometricObject {
 	/*private Point[] points = new Point[4];
@@ -135,8 +133,24 @@ public class Quadrangle extends GeometricObject {
 		for (int i = 0; i < coordinates.length; i++) {
 			coordinates[i] *= scale;
 		}
-		
-		return (Shape) new javafx.scene.shape.Polygon(coordinates);
+		 Polygon p = new Polygon(coordinates);
+		return p;
+	}
+
+	@Override
+	public boolean contains(double x, double y) {
+		Point clickPoint = new Point(x, y);
+		Triangle triangle1 = new Triangle(points[0], points[1], clickPoint);
+		Triangle triangle2 = new Triangle(points[1], points[2], clickPoint);
+		Triangle triangle3 = new Triangle(points[2], points[3], clickPoint);
+		Triangle triangle4 = new Triangle(points[3], points[0], clickPoint);
+		double areaSum = triangle1.calculateArea() + triangle2.calculateArea() + triangle3.calculateArea()
+				+ triangle4.calculateArea();
+		if (areaSum == calculateArea()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	

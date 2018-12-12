@@ -88,4 +88,14 @@ public class Eclipse extends GeometricObject{
 		double scaledB = b * scale;
 		return new javafx.scene.shape.Ellipse(scaledCenterX, scaledCenterY, scaledA, scaledB);
 	}
+
+	@Override
+	public boolean contains(double x, double y) {
+		if (((((x) - (points[0].x + a)) * ((x) - (points[0].x + a)) / (a * a))
+				+ (((y - (points[0].y + b)) * (y - (points[0].y + b))) / (b * b))) <= 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
