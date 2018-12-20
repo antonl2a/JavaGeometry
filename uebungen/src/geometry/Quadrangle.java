@@ -65,7 +65,7 @@ public class Quadrangle extends GeometricObject {
 		return true;
 	}
 	public void initialize() {
-		do {
+		do {			
 			for(Point point : points) {
 				point.initialize();
 			}
